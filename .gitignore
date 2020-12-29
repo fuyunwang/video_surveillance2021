@@ -48,6 +48,8 @@ target/
 *.tar
 *.tar.gz
 
+/target/
+
 ### logs ####
 /logs/
 *.log
