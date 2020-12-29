@@ -13,6 +13,13 @@
     <artifactId>surveillance-apis</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.fuyunwang.surveillance</groupId>
+            <artifactId>surveillance-common</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

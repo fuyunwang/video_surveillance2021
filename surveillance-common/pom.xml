@@ -14,4 +14,10 @@
     <name>surveillance-common</name>
     <description>surveillance-common通用模块</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+    </dependencies>
 </project>

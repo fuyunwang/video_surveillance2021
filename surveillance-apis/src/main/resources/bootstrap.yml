@@ -5,6 +5,9 @@ spring:
     config:
       uri: http://localhost:8888/
       fail-fast: true
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}
   profiles:
     active: dev
 server:
