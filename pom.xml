@@ -8,9 +8,10 @@
     <artifactId>video-surveillance</artifactId>
     <version>2.0.0</version>
     <modules>
-        <module>surveillance-common</module>
+        <module>surveillance-com.fuyunwang.surveillance.common</module>
         <module>surveillance-config</module>
         <module>surveillance-apis</module>
+        <module>surveillance-auth</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -29,7 +30,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR6</spring-cloud.version>
         <spring-cloud-alibaba.version>0.9.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
 

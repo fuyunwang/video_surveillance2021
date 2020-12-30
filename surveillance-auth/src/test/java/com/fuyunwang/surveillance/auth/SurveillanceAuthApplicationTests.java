@@ -1,10 +1,10 @@
-package com.fuyunwang.surveillance.surveillance.apis;
+package com.fuyunwang.surveillance.auth;
 
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SurveillanceApisApplicationTests {
+class SurveillanceAuthApplicationTests {
 
 
     void contextLoads() {
