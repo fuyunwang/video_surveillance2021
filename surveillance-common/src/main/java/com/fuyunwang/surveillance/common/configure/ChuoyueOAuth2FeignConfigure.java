@@ -1,7 +1,6 @@
 package com.fuyunwang.surveillance.common.configure;
 
-import com.fuyunwang.chuoyue.common.base.GlobalConstant;
-import feign.RequestInterceptor;
+import com.fuyunwang.surveillance.common.base.GlobalConstant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,7 +13,7 @@ import org.springframework.util.Base64Utils;
  * @Description: Feign调用服务的过程中token在此定义并添加
  */
 public class ChuoyueOAuth2FeignConfigure {
-    @Bean
+    /*@Bean
     public RequestInterceptor oauth2FeignRequestInterceptor() {
         return requestTemplate -> {
             // 添加 Zuul Token
@@ -27,5 +26,5 @@ public class ChuoyueOAuth2FeignConfigure {
                 requestTemplate.header(HttpHeaders.AUTHORIZATION, "bearer " + authorizationToken);
             }
         };
-    }
+    }*/
 }

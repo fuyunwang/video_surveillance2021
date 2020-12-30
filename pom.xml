@@ -8,7 +8,7 @@
     <artifactId>video-surveillance</artifactId>
     <version>2.0.0</version>
     <modules>
-        <module>surveillance-com.fuyunwang.surveillance.common</module>
+        <module>surveillance-common</module>
         <module>surveillance-config</module>
         <module>surveillance-apis</module>
         <module>surveillance-auth</module>

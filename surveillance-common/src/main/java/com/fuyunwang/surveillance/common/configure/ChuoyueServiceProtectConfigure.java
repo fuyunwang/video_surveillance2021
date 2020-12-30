@@ -1,6 +1,6 @@
 package com.fuyunwang.surveillance.common.configure;
 
-import com.fuyunwang.chuoyue.common.interceptor.ChuoyueServiceProtectInterceptor;
+//import com.fuyunwang.chuoyue.common.interceptor.ChuoyueServiceProtectInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,14 +15,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Description:
  */
 public class ChuoyueServiceProtectConfigure implements WebMvcConfigurer {
-    @Bean
+    /*@Bean
     public HandlerInterceptor chuoyueServiceProtectInterceptor() {
         return new ChuoyueServiceProtectInterceptor();
-    }
+    }*/
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(chuoyueServiceProtectInterceptor());
+//        registry.addInterceptor(chuoyueServiceProtectInterceptor());
     }
     @Bean
     @ConditionalOnMissingBean(value = PasswordEncoder.class)

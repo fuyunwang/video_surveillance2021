@@ -1,7 +1,9 @@
 package com.fuyunwang.surveillance.common.configure;
 
-import com.fuyunwang.chuoyue.common.handler.ChuoyueAccessDeniedHandler;
-import com.fuyunwang.chuoyue.common.handler.ChuoyueAuthExceptionEntryPoint;
+//import com.fuyunwang.chuoyue.common.handler.ChuoyueAccessDeniedHandler;
+//import com.fuyunwang.chuoyue.common.handler.ChuoyueAuthExceptionEntryPoint;
+import com.fuyunwang.surveillance.common.handler.ChuoyueAccessDeniedHandler;
+import com.fuyunwang.surveillance.common.handler.ChuoyueAuthExceptionEntryPoint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 

@@ -1,6 +1,6 @@
 package com.fuyunwang.surveillance.common.utils;
 
-import com.fuyunwang.chuoyue.common.base.GlobalConstant;
+import com.fuyunwang.surveillance.common.base.GlobalConstant;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.ArrayUtils;
 

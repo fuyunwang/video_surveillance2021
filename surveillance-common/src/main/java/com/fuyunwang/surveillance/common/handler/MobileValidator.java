@@ -1,21 +1,22 @@
 package com.fuyunwang.surveillance.common.handler;
 
-import com.fuyunwang.chuoyue.common.annotation.IsMobile;
-import com.fuyunwang.chuoyue.common.base.GlobalConstant;
-import com.fuyunwang.chuoyue.common.utils.RegexUtil;
+//import com.fuyunwang.chuoyue.common.annotation.IsMobile;
+//import com.fuyunwang.chuoyue.common.base.GlobalConstant;
+//import com.fuyunwang.chuoyue.common.utils.RegexUtil;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+//import javax.validation.ConstraintValidator;
+//import javax.validation.ConstraintValidatorContext;
 
 /**
  * @Date: 2020/10/4 16:02
  * @Author: FuyunWang
  * @Description:
  */
-public class MobileValidator implements ConstraintValidator<IsMobile, String> {
+public class MobileValidator  {
+    //implements ConstraintValidator<IsMobile, String>
 
-    @Override
+    /*@Override
     public void initialize(IsMobile isMobile) {
     }
 
@@ -31,5 +32,5 @@ public class MobileValidator implements ConstraintValidator<IsMobile, String> {
         } catch (Exception e) {
             return false;
         }
-    }
+    }*/
 }
