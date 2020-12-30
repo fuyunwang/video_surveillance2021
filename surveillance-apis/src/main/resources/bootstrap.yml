@@ -1,15 +1,20 @@
 spring:
   application:
-    name: config-client
+    name: surveillance-apis
   cloud:
-    config:
-      uri: http://localhost:8888/
-      fail-fast: true
+#    config:
+#      uri: http://localhost:8888/
+#      fail-fast: true
     nacos:
       discovery:
-        server-addr: ${nacos.url}
-  profiles:
-    active: dev
+        server-addr: ${nacos.url}:8001
+      config:
+        server-addr: ${nacos.url}:8001
+        group: DEFAULT_GROUP
+        prefix: surveillance-apis
+        file-extension: yaml
+#  profiles:
+#    active: dev
 server:
   port: 8762
 
