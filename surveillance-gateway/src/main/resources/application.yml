@@ -1,0 +1,9 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: Surveillance-Gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.url}:8001
