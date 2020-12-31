@@ -1,7 +1,6 @@
 server:
   port: 10086
-#  servlet:
-#    context-path: /surveillance
+
 spring:
   application:
     name: Surveillance-Gateway
