@@ -14,6 +14,7 @@
         <module>surveillance-auth</module>
         <module>surveillance-gateway</module>
         <module>surveillance-upms</module>
+        <module>surveillance-monitor</module>
     </modules>
     <packaging>pom</packaging>
 
