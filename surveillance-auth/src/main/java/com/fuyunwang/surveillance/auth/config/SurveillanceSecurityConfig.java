@@ -53,7 +53,7 @@ public class SurveillanceSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/oauth/**").authenticated()
                 .and()
                 .csrf().disable()
-                .cors().disable()
+//                .cors().disable()
                 ;
 //                .httpBasic();
     }
