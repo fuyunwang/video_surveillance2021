@@ -1,7 +1,9 @@
 package com.fuyunwang.surveillance.auth.security.controller;
 
+import com.fuyunwang.surveillance.auth.security.service.ValidateCodeService;
 import com.fuyunwang.surveillance.common.base.ResponseResult;
 import com.fuyunwang.surveillance.common.exception.InternalException;
+import com.fuyunwang.surveillance.common.exception.ValidateCodeException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
@@ -43,11 +45,11 @@ public class SecurityController {
         }
         return ResponseResult.createBySuccess("退出登陆成功");
     }
-//    @Autowired
-//    private ValidateCodeService validateCodeService;
-//
-//    @GetMapping("captcha")
-//    public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException, ValidateCodeException {
-//        validateCodeService.create(request, response);
-//    }
+    @Autowired
+    private ValidateCodeService validateCodeService;
+
+    @GetMapping("captcha")
+    public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException, ValidateCodeException {
+        validateCodeService.create(request, response);
+    }
 }

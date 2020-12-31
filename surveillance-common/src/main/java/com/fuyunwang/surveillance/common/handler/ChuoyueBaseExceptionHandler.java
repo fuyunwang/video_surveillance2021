@@ -8,19 +8,25 @@ import com.fuyunwang.surveillance.common.base.ResponseCode;
 import com.fuyunwang.surveillance.common.base.ResponseResult;
 import com.fuyunwang.surveillance.common.exception.InternalException;
 import com.fuyunwang.surveillance.common.utils.GlobalUtil;
+import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 //import javax.validation.ConstraintViolation;
 //import javax.validation.ConstraintViolationException;
 //import javax.validation.Path;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Path;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -45,7 +51,7 @@ public class ChuoyueBaseExceptionHandler {
                 GlobalUtil.data(ResponseCode.ACCESS_DENIED.getDesc()));
     }
     //单个参数异常处理
-  /*  @ExceptionHandler(value = ConstraintViolationException.class)
+    @ExceptionHandler(value = ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseResult handleConstraintViolationException(ConstraintViolationException e) {
         StringBuilder message = new StringBuilder();
@@ -57,9 +63,9 @@ public class ChuoyueBaseExceptionHandler {
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
         return ResponseResult.createByError(message.toString());
-    }*/
+    }
     //实体对象参数异常处理
-   /* @ExceptionHandler(BindException.class)
+    @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseResult handleBindException(BindException e) {
         StringBuilder message = new StringBuilder();
@@ -69,5 +75,20 @@ public class ChuoyueBaseExceptionHandler {
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
         return ResponseResult.createByError(message.toString());
-    }*/
+    }
+    //对象请求参数的校验
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseResult<Map<String,String>> handleMethodArgumentException(MethodArgumentNotValidException e) {
+        StringBuilder message = new StringBuilder();
+        List<FieldError> fieldErrors = e.getBindingResult().getFieldErrors();
+        for (FieldError error : fieldErrors) {
+            message.append(error.getField()).append(error.getDefaultMessage()).append(",");
+        }
+        message = new StringBuilder(message.substring(0, message.length() - 1));
+        Map data= Maps.newHashMap();
+        data.put("error",message);
+        return ResponseResult.createByError(ResponseCode.ILLEGAL_ARGUMENTS.getCode(),
+                ResponseCode.ILLEGAL_ARGUMENTS.getDesc(),data);
+    }
 }
