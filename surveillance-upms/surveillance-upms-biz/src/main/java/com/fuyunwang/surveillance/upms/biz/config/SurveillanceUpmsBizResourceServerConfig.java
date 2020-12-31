@@ -29,6 +29,8 @@ public class SurveillanceUpmsBizResourceServerConfig extends ResourceServerConfi
                 .requestMatchers().antMatchers("/**")
                 .and()
                 .authorizeRequests()
+                .antMatchers("/swagger-ui.html","/webjars/**","/swagger-resources/**","/v2/api-docs/**","/csrf","/").permitAll()
+                .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/**").authenticated();
     }
     @Override
