@@ -5,6 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.fuyunwang.chuoyue.common.base.ResponseCode;
 //import com.fuyunwang.chuoyue.common.base.ResponseResult;
 //import com.fuyunwang.chuoyue.common.utils.GlobalUtil;
+import com.fuyunwang.surveillance.common.base.GlobalConstant;
+import com.fuyunwang.surveillance.common.base.ResponseCode;
+import com.fuyunwang.surveillance.common.base.ResponseResult;
+import com.fuyunwang.surveillance.common.utils.GlobalUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.Base64Utils;
@@ -12,6 +16,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
@@ -20,11 +26,11 @@ import java.io.PrintWriter;
  * @Description: 避免客户端请求绕过网关,直接调用微服务.校验请求头
  */
 public class ChuoyueServiceProtectInterceptor implements HandlerInterceptor {
-   /* @Override
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 从请求头中获取 Zuul Token
-        String token = request.getHeader(GlobalConstant.ZuulFilterConstant.ZUUL_TOKEN_HEADER);
-        String zuulToken = new String(Base64Utils.encode(GlobalConstant.ZuulFilterConstant.ZUUL_TOKEN_VALUE.getBytes()));
+        String token = request.getHeader(GlobalConstant.GatewayFilterConstant.GATEWAY_TOKEN_HEADER);
+        String zuulToken = new String(Base64Utils.encode(GlobalConstant.GatewayFilterConstant.GATEWAY_TOKEN_VALUE.getBytes()));
         // 校验 Zuul Token的正确性
         if (StringUtils.equals(zuulToken, token)) {
             return true;
@@ -45,5 +51,5 @@ public class ChuoyueServiceProtectInterceptor implements HandlerInterceptor {
             out.close();
             return false;
         }
-    }*/
+    }
 }

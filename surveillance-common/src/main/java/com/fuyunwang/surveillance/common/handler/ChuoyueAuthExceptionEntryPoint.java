@@ -1,17 +1,17 @@
 package com.fuyunwang.surveillance.common.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.fuyunwang.chuoyue.common.base.ResponseCode;
-//import com.fuyunwang.chuoyue.common.base.ResponseResult;
-//import com.fuyunwang.chuoyue.common.utils.GlobalUtil;
+import com.fuyunwang.surveillance.common.base.ResponseCode;
+import com.fuyunwang.surveillance.common.base.ResponseResult;
+import com.fuyunwang.surveillance.common.utils.GlobalUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-//import javax.servlet.ServletException;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -20,9 +20,9 @@ import java.io.PrintWriter;
  * @Author: FuyunWang
  * @Description: 处理多个资源服务器的异常.401
  */
-public class ChuoyueAuthExceptionEntryPoint  {
-//    implements AuthenticationEntryPoint
-  /*  @Override
+public class ChuoyueAuthExceptionEntryPoint implements AuthenticationEntryPoint{
+
+    @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         httpServletResponse.setContentType("application/json;charset=utf-8");
         httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
@@ -41,5 +41,5 @@ public class ChuoyueAuthExceptionEntryPoint  {
         out.write(new ObjectMapper().writeValueAsString(responseResult));
         out.flush();
         out.close();
-    }*/
+    }
 }

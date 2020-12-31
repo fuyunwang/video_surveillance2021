@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>surveillance-common</artifactId>
-    <name>surveillance-com.fuyunwang.surveillance.common</name>
+    <name>surveillance-common</name>
     <description>surveillance-common通用模块</description>
 
     <dependencies>

@@ -1,5 +1,7 @@
 server:
-  port: 9000
+  port: 10086
+  servlet:
+    context-path: /surveillance
 spring:
   application:
     name: Surveillance-Gateway
@@ -7,3 +9,23 @@ spring:
     nacos:
       discovery:
         server-addr: ${nacos.url}:8001
+    gateway:
+      routes:
+        - id: surveillance-auth
+          uri: lb://surveillance-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: surveillance-upms-api
+          uri: lb://surveillance-upms-api
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: surveillance-upms-biz
+          uri: lb://surveillance-upms-biz
+          predicates:
+            - Path=/biz/**
+          filters:
+            - StripPrefix=1

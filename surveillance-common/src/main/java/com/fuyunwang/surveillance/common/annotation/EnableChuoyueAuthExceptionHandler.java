@@ -1,6 +1,7 @@
 package com.fuyunwang.surveillance.common.annotation;
 
 //import com.fuyunwang.chuoyue.common.configure.ChuoyueAuthExceptionConfigure;
+import com.fuyunwang.surveillance.common.configure.ChuoyueAuthExceptionConfigure;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -13,6 +14,6 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-//@Import(ChuoyueAuthExceptionConfigure.class)
+@Import(ChuoyueAuthExceptionConfigure.class)
 public @interface EnableChuoyueAuthExceptionHandler {
 }
