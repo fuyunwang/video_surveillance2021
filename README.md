@@ -11,3 +11,9 @@
 6. Spring Cloud Oauth2
 7. Spring Cloud Sentinel
 8. Spring Cloud OpenFeign
+9. Spring Boot Admin
+10. logback + ELK
+11. Skywalking
+12. Prometheus + Grafana
+13. Jenkins + Docker
+14. Kubernetes
