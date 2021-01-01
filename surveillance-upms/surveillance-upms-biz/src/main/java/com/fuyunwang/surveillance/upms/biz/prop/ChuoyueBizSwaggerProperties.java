@@ -12,9 +12,9 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Data
 @SpringBootConfiguration
-@PropertySource(value = {"classpath:chuoyue-upms-system.properties"})
-@ConfigurationProperties(prefix = "chuoyue.npms.system")
-public class ChuoyueSystemSwaggerProperties {
+@PropertySource(value = {"classpath:chuoyue-upms-biz.properties"})
+@ConfigurationProperties(prefix = "chuoyue.npms.biz")
+public class ChuoyueBizSwaggerProperties {
     private String grantUrl;
     private String name;
     private String scope;

@@ -32,6 +32,26 @@ spring:
         server-addr: ${nacos.url}:8001
   application:
     name: surveillance-auth
+  boot:
+    admin:
+      client:
+        url: http://localhost:8401
+        username: chuoyue
+        password: password
+  info:
+    app:
+      name: ${spring.application.name}
+      description: "@project.description@"
+      version: "@project.version@"
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+    endpoint:
+      health:
+        show-details: ALWAYS
 
 mybatis-plus:
   mapper-locations: classpath*:com/fuyunwang/surveillance/auth/**/xml/*Mapper.xml

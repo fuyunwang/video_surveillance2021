@@ -1,6 +1,6 @@
 package com.fuyunwang.surveillance.upms.biz.config;
 
-import com.fuyunwang.surveillance.upms.biz.prop.ChuoyueSystemSwaggerProperties;
+import com.fuyunwang.surveillance.upms.biz.prop.ChuoyueBizSwaggerProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerConfig {
     @Autowired
-    private ChuoyueSystemSwaggerProperties chuoyueSystemSwaggerProperties;
+    private ChuoyueBizSwaggerProperties chuoyueBizSwaggerProperties;
 
     @Bean
     public Docket swaggerApi() {
@@ -35,8 +35,8 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
-                .securitySchemes(Collections.singletonList(securityScheme(chuoyueSystemSwaggerProperties)))
-                .securityContexts(Collections.singletonList(securityContext(chuoyueSystemSwaggerProperties)));
+                .securitySchemes(Collections.singletonList(securityScheme(chuoyueBizSwaggerProperties)))
+                .securityContexts(Collections.singletonList(securityContext(chuoyueBizSwaggerProperties)));
     }
 
     private ApiInfo apiInfo() {
@@ -49,7 +49,7 @@ public class SwaggerConfig {
                 "MIT License", "https://github.com/fuyunwang/video_surveillance2021/blob/main/LICENSE", Collections.emptyList());
     }
 
-    private SecurityScheme securityScheme(ChuoyueSystemSwaggerProperties swagger) {
+    private SecurityScheme securityScheme(ChuoyueBizSwaggerProperties swagger) {
         GrantType grantType = new ResourceOwnerPasswordCredentialsGrant("http://localhost:10086/surveillance/auth/oauth/token");
 
         return new OAuthBuilder()
@@ -59,14 +59,14 @@ public class SwaggerConfig {
                 .build();
     }
 
-    private SecurityContext securityContext(ChuoyueSystemSwaggerProperties swagger) {
+    private SecurityContext securityContext(ChuoyueBizSwaggerProperties swagger) {
         return SecurityContext.builder()
                 .securityReferences(Collections.singletonList(new SecurityReference("chuoyue_oauth_swagger", scopes(swagger))))
                 .forPaths(PathSelectors.any())
                 .build();
     }
 
-    private AuthorizationScope[] scopes(ChuoyueSystemSwaggerProperties swagger) {
+    private AuthorizationScope[] scopes(ChuoyueBizSwaggerProperties swagger) {
         return new AuthorizationScope[]{
                 new AuthorizationScope("test", "")
         };

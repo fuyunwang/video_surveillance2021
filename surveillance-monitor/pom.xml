@@ -9,6 +9,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>surveillance-monitor-admin</module>
+    </modules>
 
     <artifactId>surveillance-monitor</artifactId>
     <packaging>pom</packaging>

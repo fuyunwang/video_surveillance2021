@@ -28,3 +28,23 @@ spring:
             - Path=/biz/**
           filters:
             - StripPrefix=1
+  boot:
+    admin:
+      client:
+        url: http://localhost:8401
+        username: chuoyue
+        password: password
+  info:
+    app:
+      name: ${spring.application.name}
+      description: "@project.description@"
+      version: "@project.version@"
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+    endpoint:
+      health:
+        show-details: ALWAYS
