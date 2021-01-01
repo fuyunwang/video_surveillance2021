@@ -1,7 +1,9 @@
 # video_surveillance
 > 基于SpringCloud构建微服务架构的video surveillance,即Video Surveillance 2021
 
-# 技术要点
+# 项目实现
+
+## 技术要点
 
 1. Spring Boot 2.3.6.RELEASE
 2. Spring Cloud Hoxton.SR9
@@ -22,6 +24,10 @@
 17. Seata
 18. Jenkins + Docker
 19. Kubernetes
+
+## 架构图
+
+<img src="./system.png" >
 
 # 环境部署
 ## Docker
