@@ -62,6 +62,10 @@
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>

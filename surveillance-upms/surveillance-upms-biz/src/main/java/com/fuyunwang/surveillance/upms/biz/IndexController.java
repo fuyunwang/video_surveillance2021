@@ -1,5 +1,7 @@
 package com.fuyunwang.surveillance.upms.biz;
 
+import com.fuyunwang.surveillance.upms.biz.feign.IHelloService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,10 @@ import java.security.Principal;
  */
 @RestController
 public class IndexController {
+
+    @Autowired
+    private IHelloService iHelloService;
+
     @GetMapping("test1")
     @PreAuthorize("hasAnyAuthority('user:add')")
     public String test1(){
@@ -30,6 +36,12 @@ public class IndexController {
     public String test3(){
         return "拥有'user:query'权限";
     }
+
+    @GetMapping("test4")
+    public String test4(){
+        return iHelloService.hello("王小灏");
+    }
+
     @GetMapping("user")
     public Principal currentUser(Principal principal) {
         return principal;
