@@ -8,6 +8,10 @@ spring:
     nacos:
       discovery:
         server-addr: ${nacos.url}:8001
+    sentinel:
+      transport:
+        dashboard: 8080
+        port: 8719
   redis:
     database: 0
     host: 127.0.0.1

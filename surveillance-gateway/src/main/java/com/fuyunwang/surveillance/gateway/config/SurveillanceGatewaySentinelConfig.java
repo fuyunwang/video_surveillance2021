@@ -63,6 +63,7 @@ public class SurveillanceGatewaySentinelConfig {
         Set<ApiPredicateItem> predicateItems = new HashSet<>();
 
         predicateItems.add(new ApiPathPredicateItem().setPattern("/auth/captcha"));
+        predicateItems.add(new ApiPathPredicateItem().setPattern("/biz/test1"));
         ApiDefinition definition = new ApiDefinition("captcha")
                 .setPredicateItems(predicateItems);
         definitions.add(definition);

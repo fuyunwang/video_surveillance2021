@@ -16,6 +16,6 @@ spring:
 #  profiles:
 #    active: dev
 server:
-  port: 8762
+  port: 8200
 
 
