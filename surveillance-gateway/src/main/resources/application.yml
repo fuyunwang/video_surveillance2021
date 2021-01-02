@@ -34,17 +34,17 @@ spring:
         url: http://localhost:8401
         username: chuoyue
         password: password
-  info:
-    app:
-      name: ${spring.application.name}
-      description: "@project.description@"
-      version: "@project.version@"
+info:
+  app:
+    name: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: '*'
-    endpoint:
-      health:
-        show-details: ALWAYS
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

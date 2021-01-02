@@ -38,20 +38,6 @@ spring:
         url: http://localhost:8401
         username: chuoyue
         password: password
-  info:
-    app:
-      name: ${spring.application.name}
-      description: "@project.description@"
-      version: "@project.version@"
-
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: '*'
-    endpoint:
-      health:
-        show-details: ALWAYS
 
 mybatis-plus:
   mapper-locations: classpath*:com/fuyunwang/surveillance/auth/**/xml/*Mapper.xml
@@ -60,3 +46,17 @@ mybatis-plus:
     jdbc-type-for-null: null
 server:
   port: 9000
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
