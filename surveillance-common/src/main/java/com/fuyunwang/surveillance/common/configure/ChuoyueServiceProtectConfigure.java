@@ -1,9 +1,11 @@
 package com.fuyunwang.surveillance.common.configure;
 
 //import com.fuyunwang.chuoyue.common.interceptor.ChuoyueServiceProtectInterceptor;
+import com.fuyunwang.surveillance.common.converter.String2DateConverter;
 import com.fuyunwang.surveillance.common.interceptor.ChuoyueServiceProtectInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -31,4 +33,9 @@ public class ChuoyueServiceProtectConfigure implements WebMvcConfigurer {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+   /* @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new String2DateConverter());
+    }*/
 }
