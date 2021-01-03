@@ -1,4 +1,4 @@
-package com.fuyunwang.surveillance.auth.config;
+package com.fuyunwang.surveillance.upms.biz.config;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
