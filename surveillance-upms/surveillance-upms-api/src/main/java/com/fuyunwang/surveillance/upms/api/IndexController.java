@@ -14,7 +14,8 @@ import java.security.Principal;
 public class IndexController {
 
     @GetMapping("info")
-    public String getInfo(){
+    public String getInfo() throws InterruptedException {
+        Thread.sleep(500);
         return "surveillance-upms-api";
     }
 
