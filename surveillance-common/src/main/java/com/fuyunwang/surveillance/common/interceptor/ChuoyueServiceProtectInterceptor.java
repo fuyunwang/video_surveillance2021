@@ -28,10 +28,10 @@ import java.io.PrintWriter;
 public class ChuoyueServiceProtectInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 从请求头中获取 Zuul Token
+        // 从请求头中获取 GATEWAY Token
         String token = request.getHeader(GlobalConstant.GatewayFilterConstant.GATEWAY_TOKEN_HEADER);
         String zuulToken = new String(Base64Utils.encode(GlobalConstant.GatewayFilterConstant.GATEWAY_TOKEN_VALUE.getBytes()));
-        // 校验 Zuul Token的正确性
+        // 校验 GATEWAY Token的正确性
         if (StringUtils.equals(zuulToken, token)) {
             return true;
         } else {
