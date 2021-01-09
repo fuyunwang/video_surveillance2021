@@ -28,6 +28,7 @@
 ## 架构图
 
 <img src="./system.png" >
+<img src="./surveillance_cicd.png" >
 
 # 环境部署
 ## Docker
