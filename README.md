@@ -15,6 +15,7 @@
 8. Spring Cloud Sentinel
 9. Spring Cloud OpenFeign
 10. Spring Boot Admin
+11. Rabbitmq
 11. logback + Kafka + ELK
 12. Skywalking APM
 13. Prometheus + Grafana
