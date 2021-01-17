@@ -1,5 +1,5 @@
 # video_surveillance
-> 基于SpringCloud构建微服务架构的video surveillance,即Video Surveillance 2021
+> video_surveillance2021是新版video_surveillance。新版基于SpringCloud Hoxton构建微服务架构,基于TypeScript + Vue3.0构建前端
 
 # 项目实现
 
