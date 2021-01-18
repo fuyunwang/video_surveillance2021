@@ -8,26 +8,25 @@
 1. Spring Boot 2.3.6.RELEASE
 2. Spring Cloud Hoxton.SR9
 3. Spring Cloud Alibaba
-4. Spring Cloud Alibaba Nacos
-5. Spring Cloud Security
-6. Spring Cloud Oauth2
-7. MyBatis-Plus
-8. Spring Cloud Feign
-9. Spring Cloud Sentinel
-10. Spring Cloud OpenFeign
-11. Spring Boot Admin
-12. Spring Cloud Bus + Rabbitmq
-13. 消息中间件:  RocketMQ
-14. 日志处理:   logback + Kafka + ELK
-15. 链路追踪:   Skywalking APM
-16. 监控告警:   Prometheus + Grafana
-17. 限流: OpenResty + lua
-18. 定时任务:   Elastic-Job
-19. 分布式事务:  Seata
-20. 分库分表:   Sharding-JDBC
-21. 分布式文件存储:    FastDFS + OSS
-22. 数据库与服务器:    Nginx、Tomcat、Redis、MySQL、MongoDB
-23. 运维CI/CD:    Jenkins + Docker + Kubernetes
+4. Spring Cloud Security
+5. Spring Cloud Oauth2
+6. MyBatis-Plus
+7. Spring Cloud OpenFeign
+8. Spring Cloud Alibaba Nacos
+9. Spring Cloud Alibaba Sentinel
+10. Spring Boot Admin
+11. Spring Cloud Bus + Rabbitmq
+12. 消息中间件:  RocketMQ
+13. 日志处理:   logback + Kafka + ELK
+14. 链路追踪:   Skywalking APM
+15. 监控告警:   Prometheus + Grafana
+16. 限流: OpenResty + lua
+17. 定时任务:   Elastic-Job
+18. 分布式事务:  Seata
+19. 分库分表:   Sharding-JDBC
+20. 分布式文件存储:    FastDFS + OSS
+21. 数据库与服务器:    Nginx、Tomcat、Redis、MySQL、MongoDB
+22. 运维CI/CD:    Jenkins + Docker + Kubernetes
 
 ## 常见问题解决方案
 
@@ -51,7 +50,6 @@
 ## 高并发与高可用
 
 ### 设计层
-
 
 ### 中间件性能调优
 
