@@ -11,10 +11,11 @@
 4. Spring Cloud Alibaba Nacos
 5. Spring Cloud Security
 6. Spring Cloud Oauth2
-7. Spring Cloud Feign
-8. Spring Cloud Sentinel
-9. Spring Cloud OpenFeign
-10. Spring Boot Admin
+7. MyBatis-Plus
+8. Spring Cloud Feign
+9. Spring Cloud Sentinel
+10. Spring Cloud OpenFeign
+11. Spring Boot Admin
 12. Spring Cloud Bus + Rabbitmq
 13. 消息中间件:  RocketMQ
 14. 日志处理:   logback + Kafka + ELK
@@ -24,7 +25,8 @@
 18. 定时任务:   Elastic-Job
 19. 分布式事务:  Seata
 20. 分库分表: Sharding-JDBC
-21. 运维CI/CD:    Jenkins + Docker + Kubernetes
+21. Nginx、Tomcat、Redis、MySQL、MongoDB
+22. 运维CI/CD:    Jenkins + Docker + Kubernetes
 
 ## 常见问题解决方案
 
