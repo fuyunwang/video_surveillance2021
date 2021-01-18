@@ -15,16 +15,15 @@
 8. Spring Cloud Sentinel
 9. Spring Cloud OpenFeign
 10. Spring Boot Admin
-11. Rabbitmq
-11. logback + Kafka + ELK
-12. Skywalking APM
-13. Prometheus + Grafana
-14. OpenResty + lua
-15. Spring Cloud Bus + Rabbitmq
-16. Elastic-Job
-17. Seata
-18. Jenkins + Docker
-19. Kubernetes
+12. Spring Cloud Bus + Rabbitmq
+13. 消息中间件:  RocketMQ
+14. 日志处理:   logback + Kafka + ELK
+15. 链路追踪:   Skywalking APM
+16. 监控告警:   Prometheus + Grafana
+17. 限流: OpenResty + lua
+18. 定时任务:   Elastic-Job
+19. 分布式事务:  Seata
+20. 运维CI/CD:    Jenkins + Docker + Kubernetes
 
 ## 架构图
 
