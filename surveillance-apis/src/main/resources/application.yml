@@ -1,0 +1,13 @@
+kafka:
+  template:
+    templates:
+      - {"templateId":"1","templateFilePath":"surveillance-apis/src/main/resources/template/template.json","active": true}
+      - {"templateId":"2","templateFilePath":"surveillance-apis/src/main/resources/template/template.json","active": false}
+    template-result-type: 0
+    template-result-file-path: ""
+
+kafka:
+  apis:
+    bootstrap_servers: "192.168.1.100:9092"
+    acks_config: "all"
+    partitioner_class: "com.fuyunwang.surveillance.apis.kafka.MyPartition"

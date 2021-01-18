@@ -2,9 +2,9 @@ package com.fuyunwang.surveillance.apis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+//import org.springframework.cloud.context.config.annotation.RefreshScope;
 
-@RefreshScope
+//@RefreshScope
 @SpringBootApplication
 public class SurveillanceApisApplication {
 
