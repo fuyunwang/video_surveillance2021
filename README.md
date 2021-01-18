@@ -24,9 +24,10 @@
 17. 限流: OpenResty + lua
 18. 定时任务:   Elastic-Job
 19. 分布式事务:  Seata
-20. 分库分表: Sharding-JDBC
-21. Nginx、Tomcat、Redis、MySQL、MongoDB
-22. 运维CI/CD:    Jenkins + Docker + Kubernetes
+20. 分库分表:   Sharding-JDBC
+21. 分布式文件存储:    FastDFS + OSS
+22. 数据库与服务器:    Nginx、Tomcat、Redis、MySQL、MongoDB
+23. 运维CI/CD:    Jenkins + Docker + Kubernetes
 
 ## 常见问题解决方案
 
