@@ -23,7 +23,8 @@
 17. 限流: OpenResty + lua
 18. 定时任务:   Elastic-Job
 19. 分布式事务:  Seata
-20. 运维CI/CD:    Jenkins + Docker + Kubernetes
+20. 分库分表: Sharding-JDBC
+21. 运维CI/CD:    Jenkins + Docker + Kubernetes
 
 ## 架构图
 
