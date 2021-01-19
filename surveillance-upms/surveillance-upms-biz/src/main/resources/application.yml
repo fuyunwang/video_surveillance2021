@@ -42,6 +42,7 @@ spring:
         min-idle: 5
         connection-test-query: select 1
         pool-name: SurveillanceHikariCP
+        idle-timeout: 600000
       primary: base
       datasource:
         base:

@@ -34,6 +34,7 @@
 > 基于美团Leaf组件实现雪花算法
 
 2. 分布式Session:
+> jwt token作分布式session的解决方案，oauth2作授权协议
 
 3. 分布式事务: 
 
