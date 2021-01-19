@@ -19,7 +19,7 @@ public class IdController {
     @Autowired(required = false)
     private SegmentService segmentService;
 
-    @Autowired
+    @Autowired(required = false)
     private SnowflakeService snowflakeService;
 
     @GetMapping("/segment")
