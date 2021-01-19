@@ -5,6 +5,8 @@ import com.alibaba.csp.sentinel.SphU;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.fuyunwang.surveillance.upms.biz.feign.IHelloService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,12 +21,14 @@ import java.security.Principal;
  * @Date: 2020/12/30 21:26
  */
 @Slf4j
+@Api(value = "IndexController",tags = {"门户Controller"})
 @RestController
 public class IndexController {
 
     @Autowired
     private IHelloService iHelloService;
 
+    @ApiOperation(value = "test1",notes = "test1 notes",httpMethod = "GET")
     @GetMapping("test1")
     @PreAuthorize("hasAnyAuthority('user:add')")
     public String test1(){
