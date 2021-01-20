@@ -3,6 +3,12 @@ server:
   tomcat:
     uri-encoding: UTF-8
     max-swallow-size: -1
+    accept-count: 1000      # 4核8G调优
+    max-connections: 10000  # 4核8G调优
+    threads:                # 4核8G调优
+      max: 800
+      min-spare: 100
+
 
 spring:
   application:
