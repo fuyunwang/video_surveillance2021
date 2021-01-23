@@ -89,7 +89,7 @@
 2. yum-config-manager \
        --add-repo \
        https://download.docker.com/linux/centos/docker-ce.repo
-3. yum -y install docker-ce-18.09.0 docker-ce-cli-18.09.0 containerd.io
+3. yum -y install docker-ce-19.03.1 docker-ce-cli-19.03.1 containerd.io
 4. systemctl enable docker && systemctl start docker
 5. vi /etc/docker/daemon.json
     
