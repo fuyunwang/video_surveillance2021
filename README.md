@@ -118,3 +118,31 @@
 5. 192.168.1.100:2375/info
 
 ## Kubernetes
+
+1. hostnamectl set-hostname master
+
+2. 
+   `
+
+        kubeadm init --kubernetes-version=1.20.2 \
+        --apiserver-advertise-address=192.168.1.3 \
+        --image-repository registry.aliyuncs.com/google_containers \
+        --service-cidr=10.1.0.0/16 \
+        --pod-network-cidr=10.244.0.0/16
+
+   `
+
+3. mkdir -p $HOME/.kube
+
+4. sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+5. sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+6. echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+
+
+7. kubectl apply -f ./flannel.yaml
+
+8. ifconfig |grep flan
+
+9. kubectl get po -n kube-system
