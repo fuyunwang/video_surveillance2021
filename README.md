@@ -21,7 +21,7 @@
 14. 链路追踪:   Skywalking APM
 15. 监控告警:   Prometheus + Grafana
 16. 限流: OpenResty + lua
-17. 定时任务:   Elastic-Job
+17. 定时任务:   xxl-job
 18. 分布式事务:  Seata
 19. 分库分表:   Sharding-JDBC
 20. 分布式文件存储:    FastDFS + OSS
@@ -49,7 +49,7 @@
 > 基于FastDFS实现作分布式小文件存储
 
 7. 分布式任务调度:
-> 基于Elastic Job实现分布式任务调度
+> 基于xxl-job实现分布式任务调度
 
 8. 分库分表: 
 > 基于Sharding JDBC实现分库分表
