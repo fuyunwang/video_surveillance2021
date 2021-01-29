@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -49,7 +50,9 @@ public class IndexController {
     @RequestMapping("/person")
     public Person getPerson(@RequestBody Person person){
         System.err.println(ToStringBuilder.reflectionToString(person, ToStringStyle.MULTI_LINE_STYLE));
-        person.setBirthday(new Date());
+//        person.setBirthday(LocalDateTime.now());
+        person.setBirthday(LocalDate.now());
+//        person.setBirthday(new Date());
         return person;
     }
 }
