@@ -1,0 +1,17 @@
+FROM openjdk:8u212-jre
+
+MAINTAINER 2375872953@qq.om
+
+ENV TZ=Asia/Shanghai
+
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN mkdir -p /surveillance-apis
+
+WORKDIR /openjdk:8u212-jre
+
+EXPOSE 8888
+
+ADD ./target/surveillance-apis-2.0.0.jar ./
+
+ENTRYPOINT ["java", "-jar", "./surveillance-apis-2.0.0.jar"]
