@@ -3,7 +3,13 @@ server:
 
 spring:
   application:
-    name: Surveillance-Gateway
+    name: surveillance-gateway
+  boot:
+    admin:
+      client:
+        url: http://localhost:8401
+        username: chuoyue
+        password: password
   cloud:
     nacos:
       discovery:
@@ -28,17 +34,11 @@ spring:
             - Path=/biz/**
           filters:
             - StripPrefix=1
-  boot:
-    admin:
-      client:
-        url: http://localhost:8401
-        username: chuoyue
-        password: password
-info:
-  app:
-    name: ${spring.application.name}
-    description: "@project.description@"
-    version: "@project.version@"
+
+
+
+
+
 
 management:
   endpoints:

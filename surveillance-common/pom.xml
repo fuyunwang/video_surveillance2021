@@ -93,5 +93,9 @@
             <artifactId>hutool-all</artifactId>
             <version>4.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
     </dependencies>
 </project>
