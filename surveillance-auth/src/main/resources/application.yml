@@ -1,7 +1,7 @@
 spring:
   redis:
     database: 0
-    host: 127.0.0.1
+    host: 192.168.33.3
     port: 6379
     jedis:
       pool:
@@ -26,7 +26,7 @@ spring:
           username: root
           password: password
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/video_surveillance?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
+          url: jdbc:mysql://192.168.33.3:3306/video_surveillance?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true
   cloud:
     nacos:
       discovery:
@@ -58,6 +58,8 @@ management:
     web:
       exposure:
         include: '*'
+    prometheus:
+      enable: true
   endpoint:
     health:
       show-details: ALWAYS

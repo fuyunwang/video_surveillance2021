@@ -1,0 +1,57 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['192.168.33.3:8403']
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['192.168.33.3:8405']
+        labels:
+          instance: 'node_exporter'
+  - job_name: 'redis_exporter'
+    static_configs:
+      - targets: ['192.168.33.3:8408']
+        labels:
+          instance: 'redis_exporter'
+  - job_name: 'mysql_exporter'
+    static_configs:
+      - targets: ['192.168.33.3:8409']
+        labels:
+          instance: 'mysql_exporter'
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['192.168.33.3:8407']
+        labels:
+          instance: 'cadvisor'
+
+  - job_name: 'surveillance-auth'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['192.168.33.2:9000']
+        labels:
+          instance: 'surveillance-upms-api'
+  - job_name: 'surveillance-upms-api-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['192.168.33.2:8201']
+        labels:
+          instance: 'surveillance-auth'
+  - job_name: 'surveillance-upms-biz-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['192.168.33.2:8202']
+        labels:
+          instance: 'surveillance-upms-biz'
+rule_files:
+  - 'memory_over.yml'
+  - 'server_down.yml'
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["192.168.33.3:8406"]

@@ -62,7 +62,7 @@
     
     1. Redis缓存穿透
     2. Redis缓存雪崩
-
+    3. Redis缓存击穿
 
 
 ### 中间件集群及性能调优
@@ -70,7 +70,18 @@
 ## 架构图
 
 <img src="./system.png" >
+
 <img src="./surveillance_cicd.png" >
+
+## Metrics Monitor
+
+<img src="./monitoring/grafana/docker_monitor.png" >
+
+<img src="./monitoring/grafana/mysql_monitor.png" >
+
+<img src="./monitoring/grafana/redis_monitor.png" >
+
+<img src="./monitoring/grafana/jvm_monitor.png" >
 
 # 环境部署
 ## Docker
