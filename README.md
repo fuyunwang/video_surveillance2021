@@ -83,6 +83,14 @@
 
 <img src="./monitoring/grafana/jvm_monitor.png" >
 
+## Trace Monitor
+
+<img src="./monitoring/skywalking/topology.png" >
+
+<img src="./monitoring/skywalking/endpoint.png" >
+
+<img src="./monitoring/skywalking/instance.png">
+
 # 环境部署
 ## Docker
 ### CentOS7安装Docker、Docker Compose
