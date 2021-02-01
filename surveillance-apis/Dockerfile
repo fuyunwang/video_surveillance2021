@@ -14,4 +14,4 @@ EXPOSE 8888
 
 ADD ./target/surveillance-apis-2.0.0.jar ./
 
-ENTRYPOINT ["java", "-jar", "./surveillance-apis-2.0.0.jar"]
+ENTRYPOINT ["java", "-javaagent:/fuyunwang/sky-agent/agent/skywalking-agent.jar","-Dskywalking.agent.service_name=surveillance-apis","-Dskywalking.collector.backend_service=192.168.33.3:11800", "-Xmx256m", "-jar", "./surveillance-apis-2.0.0.jar"]
