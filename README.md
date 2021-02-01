@@ -77,6 +77,8 @@
 
 ## Metrics Monitor
 
+<img src="./monitoring/grafana/linux_monitor.png" >
+
 <img src="./monitoring/grafana/docker_monitor.png" >
 
 <img src="./monitoring/grafana/mysql_monitor.png" >
@@ -91,7 +93,7 @@
 
 <img src="./monitoring/skywalking/endpoint.png" >
 
-<img src="monitoring/skywalking/instance_new.png">
+<img src="monitoring/skywalking/instance.png">
 
 # 环境部署
 ## Docker
