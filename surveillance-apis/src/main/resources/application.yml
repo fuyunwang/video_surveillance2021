@@ -11,3 +11,7 @@ kafka:
     partitioner_class: "com.fuyunwang.surveillance.apis.kafka.MyPartition"
 server:
   port: 8888
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379

@@ -19,11 +19,11 @@
 10. Spring Boot Admin
 11. Spring Cloud Bus + Rabbitmq
 12. 消息中间件:  RocketMQ
-13. 日志处理:   logback + Kafka + ELK
+13. 日志处理:   Filebeat + Logback + Kafka + ELK
 14. 链路追踪:   Skywalking APM
 15. 监控告警:   Prometheus + Grafana
-16. 限流: OpenResty + lua
-17. 定时任务:   xxl-job
+16. 限流: OpenResty + Lua
+17. 定时任务:   Xxl-Job
 18. 分布式事务:  Seata
 19. 分库分表:   Sharding-JDBC
 20. 分布式文件存储:    FastDFS + OSS
