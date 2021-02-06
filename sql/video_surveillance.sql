@@ -17,9 +17,10 @@
 DROP DATABASE IF EXISTS `video_surveillance`;
 create database `video_surveillance` default character set utf8mb4 collate utf8mb4_general_ci;
 
+USE `video_surveillance`;
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-USE `video_surveillance`;
 
 -- ----------------------------
 -- Table structure for t_dept
@@ -123,7 +124,7 @@ CREATE TABLE `t_user`  (
   `AVATAR` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
   `DESCRIPTION` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`USER_ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
@@ -143,6 +144,68 @@ CREATE TABLE `t_user_role`  (
 -- Records of t_user_role
 -- ----------------------------
 INSERT INTO `t_user_role` VALUES (1, 1);
+
+-- ----------------------------
+-- Table structure for tb_menu_info
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_menu_info`;
+CREATE TABLE `tb_menu_info`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '菜单名称',
+  `menu_path` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '菜单路径',
+  `orders` int(11) NULL DEFAULT 1 COMMENT '顺序',
+  `parent_id` int(11) NULL DEFAULT 0 COMMENT '父级id,为0表示为根父级',
+  `auth_type` int(11) NULL DEFAULT 3 COMMENT '权限类型,0是只有超管才能看到,1是高管可以看到,2是中管可以看到,3是所有人都可以看到',
+  `component` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `redirect` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tb_menu_info
+-- ----------------------------
+INSERT INTO `tb_menu_info` VALUES (1, '首页展示', '/system/portal', 1, 0, 1, 'system/portal/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (2, '报警配置', '/alert', 5, 0, 1, 'Layout', 'system/alert/index');
+INSERT INTO `tb_menu_info` VALUES (3, '配置配置', '/settings', 4, 0, 1, 'Layout', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (4, '数据统计', '/system', 7, 0, 1, 'Layout', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (10, '数据报表3', 'chart/first', 3, 4, 3, 'system/chart/first/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (11, '数据报表1', 'chart/second', 1, 4, 3, 'system/chart/second/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (12, '数据报表2', 'chart/third', 2, 4, 3, 'system/chart/third/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (13, '报警管理', 'alert', 1, 2, 3, 'system/alert/index', '');
+INSERT INTO `tb_menu_info` VALUES (14, '配置管理', 'settings', 1, 3, 3, 'system/settings/index', '');
+INSERT INTO `tb_menu_info` VALUES (15, '用户模块', '/user', 2, 0, 3, 'Layout', '');
+INSERT INTO `tb_menu_info` VALUES (16, '用户管理', 'user', 1, 15, 3, 'system/user/index', '');
+INSERT INTO `tb_menu_info` VALUES (19, '部门模块', '/department', 3, 0, 3, 'Layout', '');
+INSERT INTO `tb_menu_info` VALUES (20, '部门管理', 'department', 1, 19, 3, 'system/department/index', '');
+INSERT INTO `tb_menu_info` VALUES (21, '数据报表4', 'chart/fourth', 4, 4, 3, 'system/chart/fourth/index', '');
+INSERT INTO `tb_menu_info` VALUES (22, '直播检测', '/live', 6, 0, 3, 'Layout', '');
+INSERT INTO `tb_menu_info` VALUES (23, '直播检测', 'live', 1, 22, 3, 'system/live/index', '');
+
+-- ----------------------------
+-- Table structure for tb_menu_info_meta
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_menu_info_meta`;
+CREATE TABLE `tb_menu_info_meta`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `menu_id` int(11) NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tb_menu_info_meta
+-- ----------------------------
+INSERT INTO `tb_menu_info_meta` VALUES (1, '算法配置', 'edit', 14);
+INSERT INTO `tb_menu_info_meta` VALUES (2, '报警管理', 'documentation', 13);
+INSERT INTO `tb_menu_info_meta` VALUES (3, '数据报表1', 'table', 11);
+INSERT INTO `tb_menu_info_meta` VALUES (4, '数据报表2', 'table', 12);
+INSERT INTO `tb_menu_info_meta` VALUES (5, '数据报表3', 'table', 10);
+INSERT INTO `tb_menu_info_meta` VALUES (6, '数据统计', 'chart', 4);
+INSERT INTO `tb_menu_info_meta` VALUES (7, '用户管理', 'user', 16);
+INSERT INTO `tb_menu_info_meta` VALUES (9, '部门管理', 'dashboard', 20);
+INSERT INTO `tb_menu_info_meta` VALUES (10, '数据报表4', 'table', 21);
+INSERT INTO `tb_menu_info_meta` VALUES (11, '直播检测', 'component', 23);
 
 -- ----------------------------
 -- Table structure for zipkin_annotations
