@@ -151,7 +151,7 @@
 2. 
    `
 
-        kubeadm init --kubernetes-version=1.20.2 \
+        kubeadm init --kubernetes-version=1.19.2 \
         --apiserver-advertise-address=192.168.1.3 \
         --image-repository registry.aliyuncs.com/google_containers \
         --service-cidr=10.1.0.0/16 \
