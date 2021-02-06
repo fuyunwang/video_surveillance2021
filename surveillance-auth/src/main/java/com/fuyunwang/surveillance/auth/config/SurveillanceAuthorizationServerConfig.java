@@ -3,6 +3,7 @@ package com.fuyunwang.surveillance.auth.config;
 import com.fuyunwang.surveillance.auth.prop.ChuoyueAuthProperties;
 import com.fuyunwang.surveillance.auth.prop.ChuoyueOauth2ClientsProperties;
 import com.fuyunwang.surveillance.auth.translator.ChuoyueWebResponseExceptionTranslator;
+import com.fuyunwang.surveillance.common.pojo.ChuoyueUser;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +14,25 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.builders.InMemoryClientDetailsServiceBuilder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
-import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
-import org.springframework.security.oauth2.provider.token.DefaultUserAuthenticationConverter;
-import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
+import org.springframework.security.oauth2.provider.token.*;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * @Description:
@@ -72,12 +80,33 @@ public class SurveillanceAuthorizationServerConfig extends AuthorizationServerCo
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
+        List<TokenEnhancer> enhancers = new ArrayList<>();
+        enhancers.add((accessToken, authentication) -> {
+            ChuoyueUser principal = (ChuoyueUser) authentication.getPrincipal();
+            LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+            map.put("username",principal.getUsername());
+            map.put("avatar", principal.getAvatar());
+            map.put("email",principal.getEmail());
+            map.put("description",principal.getDescription());
+            DefaultOAuth2AccessToken token = (DefaultOAuth2AccessToken) accessToken;
+            token.setAdditionalInformation(map);
+            return token;
+        });
+        enhancers.add(jwtAccessTokenConverter());
+        enhancerChain.setTokenEnhancers(enhancers);//将自定义Enhancer加入EnhancerChain的delegates数组中
         endpoints.tokenStore(tokenStore())
                 .userDetailsService(userDetailService)
                 .authenticationManager(authenticationManager)
-//                .tokenServices(defaultTokenServices())
                 .exceptionTranslator(translator)
-                .accessTokenConverter(jwtAccessTokenConverter());
+                .tokenEnhancer(enhancerChain);
+    }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        super.configure(security);
+        security.tokenKeyAccess("permitAll()")// 允许访问 token 的公钥
+                .checkTokenAccess("permitAll()");// 允许检查 token 的状态
     }
 
     @Bean
