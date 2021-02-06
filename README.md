@@ -71,9 +71,9 @@
 
 ## 架构图
 
-<img src="./system.png" >
+<img src="images/system.png" >
 
-<img src="./surveillance_cicd.png" >
+<img src="images/surveillance_cicd.png" >
 
 ## Metrics Monitor
 
@@ -94,6 +94,10 @@
 <img src="./monitoring/skywalking/endpoint.png" >
 
 <img src="monitoring/skywalking/instance.png">
+
+## Postman Api
+
+<img src="images/login_postman.png">
 
 # 环境部署
 ## Docker
