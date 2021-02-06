@@ -175,6 +175,6 @@
 9. kubectl get po -n kube-system
 
 ## End
-> 如果此项目有帮助到你，点个star吧 ^=^
+> Coding不易，点个star吧 ^=^。当然如果此项目有帮助到你，你也可以请我吃糖
 
 <img src="images/wechat.jpg" width="426px">
