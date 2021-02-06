@@ -173,3 +173,8 @@
 8. ifconfig |grep flan
 
 9. kubectl get po -n kube-system
+
+## End
+> 如果此项目有帮助到你，点个star吧 ^=^
+
+<img src="images/wechat.jpg" width="426px">
