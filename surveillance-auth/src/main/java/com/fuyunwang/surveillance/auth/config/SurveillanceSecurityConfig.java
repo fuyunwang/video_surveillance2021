@@ -37,14 +37,14 @@ public class SurveillanceSecurityConfig extends WebSecurityConfigurerAdapter {
     private SurveillanceUserDetailService userDetailService;
     @Autowired
     private ChuoyueAuthProperties chuoyueAuthProperties;
-    @Autowired
-    private ValidateCodeFilter validateCodeFilter;
+//    @Autowired
+//    private ValidateCodeFilter validateCodeFilter;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String[] anonUrls= StringUtils.splitByWholeSeparatorPreserveAllTokens(chuoyueAuthProperties.getAnonPath(),",");
-        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
-                .requestMatchers()
+//        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
+             http.requestMatchers()
 //                .antMatchers("/**")
                 .antMatchers("/oauth/**")
                 .and()

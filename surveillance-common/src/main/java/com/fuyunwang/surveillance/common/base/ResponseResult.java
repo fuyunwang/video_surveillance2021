@@ -61,6 +61,9 @@ public class ResponseResult<T> implements Serializable {
     public static <T> ResponseResult<T> createByError(int errorCode, String errorMessage){
         return new ResponseResult<T>(errorCode,errorMessage);
     }
+    public static <T> ResponseResult<T> createByError(String errorMessage, T data){
+        return new ResponseResult<T>(ResponseCode.ERROR.getCode(),errorMessage,data);
+    }
     public static <T> ResponseResult<T> createByError(int errorCode, String errorMessage, T data){
         return new ResponseResult<T>(errorCode,errorMessage,data);
     }

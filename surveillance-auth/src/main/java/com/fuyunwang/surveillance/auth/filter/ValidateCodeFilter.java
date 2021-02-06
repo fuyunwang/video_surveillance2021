@@ -30,7 +30,7 @@ import java.util.Base64;
  * @Author: FuyunWang
  * @Description:
  */
-@Component
+//@Component
 @Slf4j
 public class ValidateCodeFilter extends OncePerRequestFilter {
 

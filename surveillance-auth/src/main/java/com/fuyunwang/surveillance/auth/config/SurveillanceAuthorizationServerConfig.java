@@ -55,6 +55,7 @@ public class SurveillanceAuthorizationServerConfig extends AuthorizationServerCo
     @Autowired
     private ChuoyueWebResponseExceptionTranslator translator;
 
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         ChuoyueOauth2ClientsProperties[] clientsArray = chuoyueAuthProperties.getClients();
@@ -98,8 +99,8 @@ public class SurveillanceAuthorizationServerConfig extends AuthorizationServerCo
         endpoints.tokenStore(tokenStore())
                 .userDetailsService(userDetailService)
                 .authenticationManager(authenticationManager)
-                .exceptionTranslator(translator)
-                .tokenEnhancer(enhancerChain);
+                .tokenEnhancer(enhancerChain)
+        .exceptionTranslator(translator);
     }
 
     @Override

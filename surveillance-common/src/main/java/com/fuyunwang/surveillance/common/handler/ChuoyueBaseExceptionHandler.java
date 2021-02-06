@@ -36,7 +36,7 @@ import java.util.Set;
  */
 @Slf4j
 public class ChuoyueBaseExceptionHandler {
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = InternalException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseResult handleException(InternalException e) {
         log.error("系统内部异常，异常信息", e);
