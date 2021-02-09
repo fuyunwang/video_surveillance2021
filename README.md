@@ -1,7 +1,7 @@
 # video_surveillance2021
 > video_surveillance2021是新版video_surveillance。新版基于SpringCloud Hoxton + Spring Cloud Alibaba构建微服务架构,基于TypeScript + Vue3.0构建前端
 
-## 致力于打造企业级通用PaaS平台
+# 致力于打造企业级通用PaaS平台
 
 # 项目实现(请科学上网以查看效果图)
 
