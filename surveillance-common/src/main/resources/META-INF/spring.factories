@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.fuyunwang.surveillance.common.configure.ChuoyueJacksonConfigure
+    com.fuyunwang.surveillance.common.configure.ChuoyueJacksonConfigure,\
+    com.fuyunwang.surveillance.common.configure.ChuoyueWebMvcConfigure
 
