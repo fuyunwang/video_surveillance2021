@@ -17,18 +17,18 @@
 8. Spring Cloud Alibaba Nacos
 9. Spring Cloud Alibaba Sentinel
 10. Spring Boot Admin
-11. Spring Cloud Bus + Rabbitmq
-12. 消息中间件:  RocketMQ
-13. 日志处理:   Filebeat + Logback + Kafka + ELK
+11. Spring Cloud Bus
+12. 消息中间件:  RocketMQ、Kafka
+13. 日志处理:   ELK
 14. 链路追踪:   Skywalking APM
 15. 监控告警:   Prometheus + Grafana
-16. 限流: OpenResty + Lua
-17. 定时任务:   Xxl-Job
-18. 分布式事务:  Seata
-19. 分库分表:   Sharding-JDBC
-20. 分布式文件存储:    FastDFS + OSS
-21. 数据库与服务器:    Nginx、Tomcat、Redis、MySQL、MongoDB
-22. 运维CI/CD:    Jenkins + Docker + Kubernetes
+16. 定时任务:   Xxl-Job
+17. 分布式事务:   Seata
+18. 分库分表:   ShardingSphere
+19. 分布式文件存储:   FastDFS + OSS
+20. 服务器:   Tomcat、Jetty、Nginx + OpenResty + Lua
+21. 数据库:   MySQL、Redis、MongoDB、ElasticSearch
+22. 运维CI/CD:   Jenkins + Docker + Kubernetes
 
 ## 常见问题解决方案
 
