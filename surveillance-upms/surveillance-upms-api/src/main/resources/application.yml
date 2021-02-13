@@ -68,3 +68,11 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.33.2:11111/xxl-job-admin/
+    executor:
+      appname: xxl-job-executor-upms-api
+      logpath: /tmp/

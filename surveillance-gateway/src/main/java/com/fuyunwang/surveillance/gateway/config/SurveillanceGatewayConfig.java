@@ -25,6 +25,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.util.StringUtils;
 import org.springframework.web.cors.CorsConfiguration;
 //import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.cors.reactive.CorsWebFilter;
@@ -54,7 +55,8 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.a
 @EnableConfigurationProperties({ServerProperties.class, ResourceProperties.class})
 public class SurveillanceGatewayConfig {
 
-    private static final String prefix = "/surveillance";
+//    private static final String prefix = "/surveillance";
+    private static final String prefix = "";
     private final ServerProperties serverProperties;
     private final ApplicationContext applicationContext;
     private final ResourceProperties resourceProperties;
