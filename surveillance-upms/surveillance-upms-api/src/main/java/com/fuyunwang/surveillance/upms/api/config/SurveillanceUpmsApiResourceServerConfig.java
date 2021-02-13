@@ -31,7 +31,7 @@ public class SurveillanceUpmsApiResourceServerConfig extends ResourceServerConfi
                 .requestMatchers().antMatchers("/**")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/actuator/**","/redisson/**").permitAll()
                 .antMatchers("/**").authenticated();
     }
     @Override

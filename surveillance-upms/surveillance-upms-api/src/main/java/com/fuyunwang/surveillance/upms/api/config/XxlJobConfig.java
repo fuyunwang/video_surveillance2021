@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @Date: 2021/2/13 16:17
  */
 @Slf4j
-@Configuration
+//@Configuration
 public class XxlJobConfig {
     @Value("${xxl.job.admin.addresses}")
     private String adminAddresses;

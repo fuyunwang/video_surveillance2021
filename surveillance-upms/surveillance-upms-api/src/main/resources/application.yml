@@ -30,6 +30,8 @@ spring:
         max-active: 2000
         max-wait: 10000
     timeout: 5000
+    redisson:
+      file: classpath:redisson.yml
   datasource:
     dynamic:
       hikari:
