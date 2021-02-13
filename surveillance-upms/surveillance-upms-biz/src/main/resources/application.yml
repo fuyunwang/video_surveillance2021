@@ -60,7 +60,7 @@ security:
   oauth2:
     resource:
       id: ${spring.application.name}
-      user-info-uri: http://localhost:10086/surveillance/auth/user
+      user-info-uri: http://localhost:10086/auth/user
 info:
   app:
     name: ${spring.application.name}
