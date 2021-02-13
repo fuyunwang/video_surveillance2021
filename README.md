@@ -75,6 +75,12 @@
 
 <img src="images/surveillance_cicd.png" >
 
+## Spring Boot Admin
+
+<img src="images/wallboard.png" >
+
+<img src="images/details.png" >
+
 ## Metrics Monitor
 
 <img src="./monitoring/grafana/linux_monitor.png" >
