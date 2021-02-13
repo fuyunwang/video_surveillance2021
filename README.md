@@ -60,11 +60,17 @@
 
 ### 系统设计
 
-1. Redis
+1. MySQL
+
+    1. MySQL读写分离
+    2. MySQL分库分表
+
+2. Redis
     
     1. Redis缓存穿透
     2. Redis缓存雪崩
     3. Redis缓存击穿
+    4. Redis缓存与数据库的双写一致性保障
 
 
 ### 中间件集群及性能调优
