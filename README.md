@@ -75,6 +75,10 @@
 
 <img src="images/surveillance_cicd.png" >
 
+## Xxl-Job
+
+<img src="images/xxl-job.png" >
+
 ## Spring Boot Admin
 
 <img src="images/wallboard.png" >
