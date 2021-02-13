@@ -72,7 +72,7 @@ management:
 xxl:
   job:
     admin:
-      addresses: http://192.168.33.2:11111/xxl-job-admin/
+      addresses: http://localhost:8080/xxl-job-admin/
     executor:
-      appname: xxl-job-executor-upms-api
+      appname: xxl-job-executor-sample
       logpath: /tmp/
