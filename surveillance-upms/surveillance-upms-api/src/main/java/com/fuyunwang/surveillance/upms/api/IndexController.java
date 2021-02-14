@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +33,7 @@ public class IndexController {
     public Principal currentUser(Principal principal) {
         return principal;
     }
-
+//    @Transactional(rollbackFor = Exception.class)  采用分布式锁+redis预减库存，
     @GetMapping("redisson")
     public String redisson(){
         RLock lock = redissonClient.getLock("lock");
@@ -46,6 +48,7 @@ public class IndexController {
             }
         } catch (Exception e) {
             //如有事务进行回滚
+//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();  手动回滚
             e.printStackTrace();
         }finally {
             lock.unlock();
