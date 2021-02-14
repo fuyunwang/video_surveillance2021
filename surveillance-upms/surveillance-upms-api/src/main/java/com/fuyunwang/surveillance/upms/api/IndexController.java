@@ -33,7 +33,7 @@ public class IndexController {
     public Principal currentUser(Principal principal) {
         return principal;
     }
-//    @Transactional(rollbackFor = Exception.class)  采用分布式锁+redis预减库存，
+//    @Transactional(rollbackFor = Exception.class)  采用分布式锁+redis预减库存，手动回滚和自动回滚都要用
     @GetMapping("redisson")
     public String redisson(){
         RLock lock = redissonClient.getLock("lock");
