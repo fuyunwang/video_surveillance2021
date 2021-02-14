@@ -39,15 +39,16 @@ public class IndexController {
             boolean b = lock.tryLock();
             if (b){
                 log.info("抢到了锁");
+                // 执行业务逻辑
                 Thread.sleep(3000);
-                lock.unlock();
             }else{
                 log.info("没抢到锁");
             }
-
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
+            //如有事务进行回滚
             e.printStackTrace();
         }finally {
+            lock.unlock();
         }
 
 
