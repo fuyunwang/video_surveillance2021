@@ -78,3 +78,9 @@ xxl:
     executor:
       appname: xxl-job-executor-sample
       logpath: /tmp/
+
+mybatis-plus:
+  mapper-locations: classpath*:com/fuyunwang/surveillance/upms/api/**/xml/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    jdbc-type-for-null: null

@@ -4,18 +4,24 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author FuyunWang
  * @since 2021-02-15
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
@@ -23,18 +29,21 @@ public class TbMenuInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonProperty("menu_id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 菜单名称
      */
+    @JsonProperty("name")
     @TableField("menu_name")
     private String menuName;
 
     /**
      * 菜单路径
      */
+    @JsonProperty("path")
     @TableField("menu_path")
     private String menuPath;
 
@@ -56,11 +65,15 @@ public class TbMenuInfo implements Serializable {
     @TableField("auth_type")
     private Integer authType;
 
-    @TableField("component")
+    @TableField(exist = false)
+    private List<TbMenuInfo> children;
+
+    @TableField(exist = false)
+    private TbMenuInfoMeta meta;
+
     private String component;
 
-    @TableField("redirect")
+    @JsonIgnore
     private String redirect;
-
-
 }
+

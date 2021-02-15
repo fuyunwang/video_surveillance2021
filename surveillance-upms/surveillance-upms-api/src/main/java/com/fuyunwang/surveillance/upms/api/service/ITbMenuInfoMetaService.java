@@ -2,6 +2,7 @@ package com.fuyunwang.surveillance.upms.api.service;
 
 import com.fuyunwang.surveillance.upms.api.entity.TbMenuInfoMeta;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
