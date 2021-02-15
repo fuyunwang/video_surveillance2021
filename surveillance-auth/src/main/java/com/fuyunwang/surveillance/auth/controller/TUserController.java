@@ -1,9 +1,11 @@
 package com.fuyunwang.surveillance.auth.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import com.fuyunwang.surveillance.auth.service.ITUserService;
+import com.fuyunwang.surveillance.auth.vo.UserInfoVo;
+import com.fuyunwang.surveillance.common.base.ResponseResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -17,4 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/t-user")
 public class TUserController {
 
+    @Autowired
+    private ITUserService itUserService;
+
+    @PostMapping("/info")
+    public ResponseResult<UserInfoVo> getUserInfo(@RequestParam("username") String username){
+        UserInfoVo userInfo = itUserService.getUserInfo(username);
+        return ResponseResult.createBySuccess(userInfo);
+    }
 }

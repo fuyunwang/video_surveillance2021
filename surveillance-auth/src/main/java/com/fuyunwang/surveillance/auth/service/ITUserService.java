@@ -2,6 +2,7 @@ package com.fuyunwang.surveillance.auth.service;
 
 import com.fuyunwang.surveillance.auth.entity.TUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fuyunwang.surveillance.auth.vo.UserInfoVo;
 
 /**
  * <p>
@@ -14,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITUserService extends IService<TUser> {
     TUser findByName(String username);
     String findUserPermissions(String username);
+    UserInfoVo getUserInfo(String username);
 }

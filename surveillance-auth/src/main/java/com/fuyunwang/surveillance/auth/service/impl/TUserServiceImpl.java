@@ -6,7 +6,9 @@ import com.fuyunwang.surveillance.auth.entity.TUser;
 import com.fuyunwang.surveillance.auth.mapper.TMenuMapper;
 import com.fuyunwang.surveillance.auth.mapper.TUserMapper;
 import com.fuyunwang.surveillance.auth.service.ITUserService;
+import com.fuyunwang.surveillance.auth.vo.UserInfoVo;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +44,16 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
             perms.add(m.getPerms());
         }
         return StringUtils.join(perms, ",");
+    }
+
+    @Override
+    public UserInfoVo getUserInfo(String username) {
+        TUser user = userMapper.findByName(username);
+        if (user==null){
+            return null;
+        }
+        UserInfoVo userInfoVo=new UserInfoVo();
+        BeanUtils.copyProperties(user,userInfoVo);
+        return userInfoVo;
     }
 }

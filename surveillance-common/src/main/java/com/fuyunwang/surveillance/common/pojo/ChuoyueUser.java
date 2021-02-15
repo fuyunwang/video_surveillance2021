@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 
@@ -37,7 +38,7 @@ public class ChuoyueUser extends User {
 
     private String roleName;
 
-    private Date lastLoginTime;
+    private LocalDateTime lastLoginTime;
 
     private String description;
 

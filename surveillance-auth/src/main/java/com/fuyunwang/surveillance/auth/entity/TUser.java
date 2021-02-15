@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -87,19 +88,19 @@ public class TUser implements Serializable {
      * 创建时间
      */
     @TableField("CREATE_TIME")
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 修改时间
      */
     @TableField("MODIFY_TIME")
-    private Date modifyTime;
+    private LocalDateTime modifyTime;
 
     /**
      * 最近访问时间
      */
     @TableField("LAST_LOGIN_TIME")
-    private Date lastLoginTime;
+    private LocalDateTime lastLoginTime;
 
     /**
      * 性别 0男 1女 2保密
