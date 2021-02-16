@@ -159,27 +159,23 @@ CREATE TABLE `tb_menu_info`  (
   `component` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `redirect` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tb_menu_info
 -- ----------------------------
-INSERT INTO `tb_menu_info` VALUES (1, '首页展示', '/system/portal', 1, 0, 1, 'system/portal/index', 'noredirect');
-INSERT INTO `tb_menu_info` VALUES (2, '报警配置', '/alert', 5, 0, 1, 'Layout', 'system/alert/index');
+INSERT INTO `tb_menu_info` VALUES (1, '首页展示', '/home', 1, 0, 1, 'Layout', '/home/welcome');
+INSERT INTO `tb_menu_info` VALUES (2, '报警配置', '/alert', 5, 0, 1, '/dashboard/analysis/index', 'system/alert/index');
 INSERT INTO `tb_menu_info` VALUES (3, '配置配置', '/settings', 4, 0, 1, 'Layout', 'noredirect');
 INSERT INTO `tb_menu_info` VALUES (4, '数据统计', '/system', 7, 0, 1, 'Layout', 'noredirect');
-INSERT INTO `tb_menu_info` VALUES (10, '数据报表3', 'chart/first', 3, 4, 3, 'system/chart/first/index', 'noredirect');
-INSERT INTO `tb_menu_info` VALUES (11, '数据报表1', 'chart/second', 1, 4, 3, 'system/chart/second/index', 'noredirect');
-INSERT INTO `tb_menu_info` VALUES (12, '数据报表2', 'chart/third', 2, 4, 3, 'system/chart/third/index', 'noredirect');
-INSERT INTO `tb_menu_info` VALUES (13, '报警管理', 'alert', 1, 2, 3, 'system/alert/index', '');
-INSERT INTO `tb_menu_info` VALUES (14, '配置管理', 'settings', 1, 3, 3, 'system/settings/index', '');
+INSERT INTO `tb_menu_info` VALUES (10, '数据报表3', 'chart/first', 3, 4, 3, '/dashboard/welcome/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (11, '数据报表1', 'chart/second', 1, 4, 3, '/dashboard/welcome/index', 'noredirect');
+INSERT INTO `tb_menu_info` VALUES (12, '数据报表2', 'chart/third', 2, 4, 3, '/dashboard/welcome/index', 'noredirect');
 INSERT INTO `tb_menu_info` VALUES (15, '用户模块', '/user', 2, 0, 3, 'Layout', '');
-INSERT INTO `tb_menu_info` VALUES (16, '用户管理', 'user', 1, 15, 3, 'system/user/index', '');
 INSERT INTO `tb_menu_info` VALUES (19, '部门模块', '/department', 3, 0, 3, 'Layout', '');
-INSERT INTO `tb_menu_info` VALUES (20, '部门管理', 'department', 1, 19, 3, 'system/department/index', '');
-INSERT INTO `tb_menu_info` VALUES (21, '数据报表4', 'chart/fourth', 4, 4, 3, 'system/chart/fourth/index', '');
+INSERT INTO `tb_menu_info` VALUES (21, '数据报表4', 'chart/fourth', 4, 4, 3, '/dashboard/welcome/index', '');
 INSERT INTO `tb_menu_info` VALUES (22, '直播检测', '/live', 6, 0, 3, 'Layout', '');
-INSERT INTO `tb_menu_info` VALUES (23, '直播检测', 'live', 1, 22, 3, 'system/live/index', '');
+INSERT INTO `tb_menu_info` VALUES (25, 'Dashboard', '/home/dashboard', 1, 1, 3, '/dashboard/welcome/index', '');
 
 -- ----------------------------
 -- Table structure for tb_menu_info_meta
@@ -190,22 +186,25 @@ CREATE TABLE `tb_menu_info_meta`  (
   `title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `menu_id` int(11) NULL DEFAULT 0,
+  `affix` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT 'true',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tb_menu_info_meta
 -- ----------------------------
-INSERT INTO `tb_menu_info_meta` VALUES (1, '算法配置', 'edit', 14);
-INSERT INTO `tb_menu_info_meta` VALUES (2, '报警管理', 'documentation', 13);
-INSERT INTO `tb_menu_info_meta` VALUES (3, '数据报表1', 'table', 11);
-INSERT INTO `tb_menu_info_meta` VALUES (4, '数据报表2', 'table', 12);
-INSERT INTO `tb_menu_info_meta` VALUES (5, '数据报表3', 'table', 10);
-INSERT INTO `tb_menu_info_meta` VALUES (6, '数据统计', 'chart', 4);
-INSERT INTO `tb_menu_info_meta` VALUES (7, '用户管理', 'user', 16);
-INSERT INTO `tb_menu_info_meta` VALUES (9, '部门管理', 'dashboard', 20);
-INSERT INTO `tb_menu_info_meta` VALUES (10, '数据报表4', 'table', 21);
-INSERT INTO `tb_menu_info_meta` VALUES (11, '直播检测', 'component', 23);
+INSERT INTO `tb_menu_info_meta` VALUES (1, '算法配置', 'bx:bx-home', 3, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (2, '报警管理', 'bx:bx-home', 2, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (3, '数据报表1', 'bx:bx-home', 11, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (4, '数据报表2', 'bx:bx-home', 12, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (5, '数据报表3', 'bx:bx-home', 10, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (6, '数据统计', 'bx:bx-home', 4, 'false');
+INSERT INTO `tb_menu_info_meta` VALUES (7, '用户管理', 'bx:bx-home', 15, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (9, '部门管理', 'bx:bx-home', 19, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (10, '数据报表4', 'bx:bx-home', 21, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (11, '直播检测', 'bx:bx-home', 22, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (13, 'Dashboard', 'bx:bx-home', 25, 'true');
+INSERT INTO `tb_menu_info_meta` VALUES (14, '首页展示', 'bx:bx-home', 1, 'true');
 
 -- ----------------------------
 -- Table structure for zipkin_annotations
