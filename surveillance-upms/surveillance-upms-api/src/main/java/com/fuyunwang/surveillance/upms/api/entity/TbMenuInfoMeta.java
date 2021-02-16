@@ -35,5 +35,6 @@ public class TbMenuInfoMeta implements Serializable {
     @TableField("menu_id")
     private Integer menuId;
 
-
+    @TableField("affix")
+    private String affix;
 }

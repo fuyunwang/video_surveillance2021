@@ -1,6 +1,7 @@
 package com.fuyunwang.surveillance.upms.api.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fuyunwang.surveillance.upms.api.dto.TbMenuInfoMetaDto;
 import com.fuyunwang.surveillance.upms.api.entity.TbMenuInfo;
 import com.fuyunwang.surveillance.upms.api.entity.TbMenuInfoMeta;
 import com.fuyunwang.surveillance.upms.api.mapper.TbMenuInfoMapper;
@@ -9,6 +10,7 @@ import com.fuyunwang.surveillance.upms.api.service.ITbMenuInfoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
