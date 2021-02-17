@@ -113,6 +113,10 @@ video_surveillance2021的前端项目: [video_surveillance2021_vue3](https://git
 
 <img src="monitoring/skywalking/instance.png">
 
+## kubernetes dashboard
+
+<img src="images/kubernetes.png" >
+
 ## Postman Api
 
 <img src="images/login_postman.png">
