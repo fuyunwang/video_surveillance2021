@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  surveillance-monitor-admin:
+    image: surveillance-monitor-admin:latest
+    container_name: surveillance-monitor-admin
+    volumes:
+      - "/fuyunwang/log:/log"
+    ports:
+      - 8401:8401
+  surveillance-gateway:
+    image: surveillance-gateway:latest
+    container_name: surveillance-gateway
+    volumes:
+      - "/fuyunwang/log:/log"
+    command:
+      - "--surveillance-monitor-admin=192.168.33.10"
+    ports:
+      - 8301:8301
+  surveillance-auth:
+    image: surveillance-auth:latest
+    container_name: surveillance-auth
+    volumes:
+      - "/fuyunwang/log:/log"
+    command:
+      - "--mysql.url=192.168.33.10"
+      - "--redis.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+  surveillance-upms-api:
+    image: surveillance-upms-api:latest
+    container_name: surveillance-upms-api
+    volumes:
+      - "/fuyunwang/log:/log"
+    command:
+      - "--mysql.url=192.168.33.10"
+      - "--rabbitmq.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+      - "--surveillance-gateway=192.168.33.10"
+  surveillance-upms-biz:
+    image: surveillance-upms-biz:latest
+    container_name: surveillance-upms-biz
+    volumes:
+      - "/fuyunwang/log:/log"
+    command:
+      - "--rabbitmq.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+      - "--surveillance-gateway=192.168.33.10"
