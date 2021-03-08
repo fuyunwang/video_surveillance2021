@@ -2,6 +2,7 @@ package com.fuyunwang.surveillance.common.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -9,8 +10,10 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @Getter
 public class ResponseResult<T> implements Serializable {
+    @JsonProperty(value = "code")
     private int status;
     private String message;
+    @JsonProperty(value = "result")
     private T data;
 
     private ResponseResult(int status) {
