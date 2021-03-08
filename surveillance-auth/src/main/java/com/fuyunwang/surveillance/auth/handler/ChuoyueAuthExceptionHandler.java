@@ -27,9 +27,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ChuoyueAuthExceptionHandler extends ChuoyueBaseExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ResponseResult<Object>> translate(Exception e) throws Exception {
-        ResponseEntity.BodyBuilder status = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
+        ResponseEntity.BodyBuilder status = ResponseEntity.status(HttpStatus.OK);
         String message = "认证失败";
         log.error(message, e);
         if (e instanceof UnsupportedGrantTypeException) {
