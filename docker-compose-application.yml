@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  surveillance-monitor-admin:
+    build:
+      context: surveillance-monitor/surveillance-monitor-admin
+      dockerfile: Dockerfile
+    container_name: surveillance-monitor-admin
+    volumes:
+      - "/surveillance/log:/log"
+    ports:
+      - 8401:8401
+  surveillance-gateway:
+    build:
+      context: surveillance-gateway
+      dockerfile: Dockerfile
+    container_name: surveillance-gateway
+    volumes:
+      - "/surveillance/log:/log"
+    command:
+      - "--surveillance-register=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+    ports:
+      - 10086:10086
+  surveillance-auth:
+    build:
+      context: surveillance-auth
+      dockerfile: Dockerfile
+    container_name: surveillance-auth
+    volumes:
+      - "/surveillance/log:/log"
+    command:
+      - "--mysql.url=192.168.33.10"
+      - "--redis.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+  surveillance-upms-api:
+    build:
+      context: surveillance-upms/surveillance-upms-api
+      dockerfile: Dockerfile
+    container_name: surveillance-upms-api
+    volumes:
+      - "/surveillance/log:/log"
+    command:
+      - "--mysql.url=192.168.33.10"
+      - "--rabbitmq.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+      - "--surveillance-gateway=192.168.33.10"
+  surveillance-upms-biz:
+    build:
+      context: surveillance-upms/surveillance-upms-biz
+      dockerfile: Dockerfile
+    container_name: surveillance-upms-biz
+    volumes:
+      - "/surveillance/log:/log"
+    command:
+      - "--rabbitmq.url=192.168.33.10"
+      - "--surveillance-monitor-admin=192.168.33.10"
+      - "--surveillance-gateway=192.168.33.10"
